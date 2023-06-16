@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Iceland&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root{
+  --default-font: 'Merriweather', serif;
+
+}
+
+/*----------NULL STYLE----------*/
+
 * {
   padding: 0;
   margin: 0;
@@ -58,141 +66,22 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+h1, h2 {
+  font-size: 24px;
+}
+
+/*----------BODY----------*/
+
 body {
-  font-family: "Merriweather", serif;
+  font-family: var(--default-font);
   font-weight: 400;
   color: #fff;
-  background-color: #000;
+  background-color: #c486a7;
   height: 100vh;
   padding: 0;
   margin: 0;
 }
 
-h1, h2 {
-  font-size: 24px;
-}
-
-.header_footer_width {
-  width: min(max(50vw, 800px), 100% - 4rem);
-  margin: 0 auto;
-}
-
-@-webkit-keyframes neon-border {
-  80% {
-    border-color: #0f0;
-    box-shadow: 0 0 6px #fff, 0 0 10px rgb(13, 89, 0), 0 0 20px #0f0;
-  }
-  82% {
-    border-color: rgb(13, 89, 0);
-    box-shadow: 0 0 7px rgb(13, 89, 0), 0 0 15px rgb(13, 89, 0);
-  }
-  83% {
-    border-color: #0f0;
-    box-shadow: 0 0 6px #fff, 0 0 10px rgb(13, 89, 0), 0 0 20px #0f0;
-  }
-  84% {
-    border-color: rgb(13, 89, 0);
-    box-shadow: 0 0 7px rgb(13, 89, 0), 0 0 15px rgb(13, 89, 0);
-  }
-  85% {
-    border-color: #0f0;
-    box-shadow: 0 0 6px #fff, 0 0 10px rgb(13, 89, 0), 0 0 20px #0f0;
-  }
-  100% {
-    border-color: rgb(13, 89, 0);
-    box-shadow: 0 0 7px rgb(13, 89, 0), 0 0 15px rgb(13, 89, 0);
-  }
-}
-
-@keyframes neon-border {
-  80% {
-    border-color: #0f0;
-    box-shadow: 0 0 6px #fff, 0 0 10px rgb(13, 89, 0), 0 0 20px #0f0;
-  }
-  82% {
-    border-color: rgb(13, 89, 0);
-    box-shadow: 0 0 7px rgb(13, 89, 0), 0 0 15px rgb(13, 89, 0);
-  }
-  83% {
-    border-color: #0f0;
-    box-shadow: 0 0 6px #fff, 0 0 10px rgb(13, 89, 0), 0 0 20px #0f0;
-  }
-  84% {
-    border-color: rgb(13, 89, 0);
-    box-shadow: 0 0 7px rgb(13, 89, 0), 0 0 15px rgb(13, 89, 0);
-  }
-  85% {
-    border-color: #0f0;
-    box-shadow: 0 0 6px #fff, 0 0 10px rgb(13, 89, 0), 0 0 20px #0f0;
-  }
-  100% {
-    border-color: rgb(13, 89, 0);
-    box-shadow: 0 0 7px rgb(13, 89, 0), 0 0 15px rgb(13, 89, 0);
-  }
-}
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  border: solid 4px #0f0;
-  border-radius: 0 0 2% 2%;
-  animation: neon-border 5s steps(1, start) infinite reverse;
-}
-header h1 {
-  margin: 1.2rem 0;
-  font-size: 29px;
-  font-family: "Iceland", cursive;
-  font-weight: 700;
-  letter-spacing: 0.2rem;
-  white-space: nowrap;
-}
-header h1 a:link, header h1 a:visited {
-  color: #fff;
-  text-decoration: none;
-}
-header h1 a p {
-  padding: 0.3rem 0;
-  border-right: solid 3px #0f0;
-  white-space: nowrap;
-  overflow: hidden;
-  -webkit-animation: animated-text 2s steps(12, end) 1s 1 normal both, animated-cursor 1000ms steps(1, end) 3.5s infinite;
-          animation: animated-text 2s steps(12, end) 1s 1 normal both, animated-cursor 1000ms steps(1, end) 3.5s infinite;
-}
-
-@-webkit-keyframes animated-text {
-  from {
-    width: 0;
-  }
-  to {
-    width: 195px;
-  }
-}
-
-@keyframes animated-text {
-  from {
-    width: 0;
-  }
-  to {
-    width: 195px;
-  }
-}
-@-webkit-keyframes animated-cursor {
-  50% {
-    border-right-color: #000;
-  }
-  100% {
-    border-right-color: #0f0;
-  }
-}
-@keyframes animated-cursor {
-  50% {
-    border-right-color: #000;
-  }
-  100% {
-    border-right-color: #0f0;
-  }
-}
 #page-container {
   min-height: 100vh;
   display: grid;
@@ -203,22 +92,88 @@ header h1 a p {
   display: grid;
 }
 
+/*----------HEADER----------*/
+
+.header_footer_width {
+  width: min(max(50vw, 800px), 100% - 4rem);
+  margin: 0 auto;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: solid 4px #0f0;
+  border-radius: 0 0 2% 2%;
+}
+
+header h1 {
+  margin: 1.2rem 0;
+  font-size: 29px;
+  font-family: "Iceland", cursive;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  white-space: nowrap;
+}
+
+header h1 a:link, header h1 a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+header h1 a p {
+  padding: 0.3rem 0;
+  border-right: solid 3px #0f0;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: animated-text 2s steps(12, end) 1s 1 normal both, animated-cursor 1000ms steps(1, end) 3.5s infinite;
+}
+
+
+@keyframes animated-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 195px;
+  }
+}
+
+@keyframes animated-cursor {
+  50% {
+    border-right-color: #000;
+  }
+  100% {
+    border-right-color: #0f0;
+  }
+}
+
+/*----------MAIN----------*/
+
 main {
   border: solid 4px #0f0;
   border-radius: 1%;
-  animation: neon-border 5s steps(1, start) infinite reverse;
   width: min(max(50vw, 800px), 100% - 4rem);
   margin: 8rem auto 2rem auto;
 }
+
+/*----------FOOTER----------*/
+
+
+
+/*----------SMALL SCREEN----------*/
 
 @media only screen and (max-width: 600px) {
   main {
     margin: 5rem 2rem 2rem 2rem;
   }
+
   .header_footer_width {
     margin: 0 2rem;
   }
+
   header h1 a p {
     margin: 0 auto;
   }
-}/*# sourceMappingURL=main.css.map */
+}
