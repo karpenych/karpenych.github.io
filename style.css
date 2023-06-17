@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Iceland&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/*----------SETTINGS----------*/
+
+:root{
+  --default-font: 'Merriweather', serif;
+  --extra-font: "Iceland", cursive;
+  --bg-color: #c486a7;
+  --bg-color2: #9c5b9d;
+  --bg-color2a: #9c5b9dcc;
+  --border-color: #fff1;
+  --text-color: #fff;
+  --border-anim-color: rgb(105, 42, 128);
+}
+
+/*----------NULL STYLE----------*/
+
+* {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a, a:visited, a:hover {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+h1, h2 {
+  font-size: 24px;
+}
+
+ul {
+  margin: 0;
+}
+
+li {
+  list-style-type:none;
+  padding: 0.1rem 0;
+}
+
+/*----------BODY----------*/
+
+body {
+  font-family: var(--default-font);
+  font-weight: 400;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  height: 100vh;
+  margin: 0;
+}
+
+.header_footer_width {
+  width: min(max(50vw, 800px), 100% - 4rem);
+  margin: 0 auto;
+}
+
+#page-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+#grid-container {
+  display: grid;
+}
+
+p a:link, li a:link {
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+@keyframes fade {
+  from {opacity: 0;}
+}
+
+.fade1 {
+  animation: fade 1s ease-in .5s backwards;
+}
+
+.fade2 {
+  animation: fade 1s ease-in .6s backwards;
+}
+
+.fade3 {
+  animation: fade 1s ease-in .7s backwards;
+}
+
+.fade4 {
+  animation: fade 1s ease-in .8s backwards;
+}
+
+/*----------HEADER----------*/
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 5px solid var(--border-color);
+  background-color: var(--bg-color2a);
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+header h1 {
+  margin: 1.2rem 0;
+  font-size: 29px;
+  font-family: var(--extra-font);
+  font-weight: 700;
+  letter-spacing: 0.245rem;
+  white-space: nowrap;
+}
+
+header h1 p {
+  padding: 0.3rem 0;
+  border-right: solid 3px var(--border-anim-color);
+  white-space: nowrap;
+  overflow: hidden;
+  animation: animated-text 2s steps(12, end) 1s 1 normal both, animated-cursor 1000ms steps(1, end) 3.5s infinite;
+}
+
+
+@keyframes animated-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 202px;
+  }
+}
+
+@keyframes animated-cursor {
+  50% {
+    border-right-color: var(--bg-color2a);
+  }
+  100% {
+    border-right-color: var(--border-anim-color);
+  }
+}
+
+/*----------MAIN----------*/
+
+main {
+  background-color: var(--bg-color2);
+  border: solid 4px var(--border-color);
+  border-radius: 1%;
+  width: min(max(50vw, 950px), 100% - 4rem);
+  margin: 8rem auto 2rem auto;
+}
+
+main a:hover {
+  color: rgb(85, 23, 94);
+}
+
+main p {
+  color: var(--text-color);
+  font-size: 16px;
+
+}
+
+.list {
+  margin-bottom: 0.1rem;
+}
+
+#grid-container {
+  grid-template-areas: 'pic ttl'
+                       'pic inf'
+                       'pic inf'
+                       'exp exp'
+}
+
+#pic {
+  margin: auto;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  width: 256px;
+  height: 256px;
+  align-items: right;
+  grid-area: pic;
+  border-radius: 50%;
+  background-image: url('assets/me.jpg');
+  background-size: 100%;
+}
+
+#title h2 {
+  font-size: 24px;
+  margin-left: 1rem;
+}
+
+#info {
+  grid-area: inf;
+}
+
+#title {
+  grid-area: ttl;
+}
+
+#experience {
+  background-color: var(--bg-color);
+  border: 5px solid var(--border-color);
+  margin: 1rem;
+  padding: 0.3rem;
+  grid-area: exp;
+}
+
+
+/*----------FOOTER----------*/
+
+footer {
+  width: 100%;
+  background-color: var(--bg-color2);
+  border-top: 5px solid var(--border-color);
+}
+
+footer h1 {
+  margin: 1.2rem 0;
+  font-family: var(--extra-font);
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+  padding: 0.3rem 0;
+  font-size: min(24px, 7vw);
+}
+
+/*----------SMALL SCREEN----------*/
+
+@media only screen and (max-width: 695px) {
+  #grid-container {
+        grid-template-areas: 'pic ttl'
+                             'inf inf'
+                             'exp exp'
+  }
+
+  #title h2 {
+    font-size: 20px;
+    word-spacing: 100vw;
+  }
+
+  #pic {
+    margin: auto 1rem auto 0.3rem;
+    width: 64px;
+    height: 64px;
+  }
+
+  #info {
+    margin-left: 0.1rem;
+  }
+
+  main {
+    width: min(max(50vw, 800px), 100% - 1rem);
+    margin: 5rem auto 1rem auto;
+  }
+
+  .header_footer_width {
+    margin: 0 2rem;
+  }
+
+  header h1 a p{
+    margin: 0 auto;
+  }
+
+  footer div{
+    text-align: center;
+  }
+
+}
