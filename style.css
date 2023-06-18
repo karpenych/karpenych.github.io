@@ -160,7 +160,6 @@ header h1 p {
 main {
   background-color: var(--bg-color2);
   border: solid 4px var(--border-color);
-  border-radius: 1%;
   width: min(max(50vw, 950px), 100% - 4rem);
   margin: 8rem auto 2rem auto;
 }
