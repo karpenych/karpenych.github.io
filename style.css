@@ -50,7 +50,7 @@ ul {
 }
 
 li {
-  list-style-type:none;
+  list-style-type: none;
   padding: 0.1rem 0;
 }
 
@@ -105,6 +105,10 @@ p a:link, li a:link {
   animation: fade 1s ease-in .8s backwards;
 }
 
+.fade5 {
+  animation: fade 1s ease-in .9s backwards;
+}
+
 /*----------HEADER----------*/
 
 header {
@@ -136,13 +140,12 @@ header h1 p {
   animation: animated-text 2s steps(12, end) 1s 1 normal both, animated-cursor 1000ms steps(1, end) 3.5s infinite;
 }
 
-
 @keyframes animated-text {
   from {
     width: 0;
   }
   to {
-    width: 202px;
+    width: 200px;
   }
 }
 
@@ -178,11 +181,16 @@ main p {
   margin-bottom: 0.1rem;
 }
 
+.markable > li {
+  list-style-type: circle;
+}
+
 #grid-container {
   grid-template-areas: 'pic ttl'
                        'pic inf'
                        'pic inf'
-                       'exp exp'
+                       'skl skl'
+                       'ach ach'
 }
 
 #pic {
@@ -212,12 +220,19 @@ main p {
   grid-area: ttl;
 }
 
-#experience {
+.informaton {
   background-color: var(--bg-color);
   border: 5px solid var(--border-color);
-  margin: 1rem;
+  margin: 0.5rem 1rem;
   padding: 0.3rem;
-  grid-area: exp;
+}
+
+#skills {
+  grid-area: skl;
+}
+
+#achievements {
+  grid-area: ach;
 }
 
 
@@ -244,7 +259,8 @@ footer h1 {
   #grid-container {
         grid-template-areas: 'pic ttl'
                              'inf inf'
-                             'exp exp'
+                             'skl skl'
+                             'ach ach'
   }
 
   #title h2 {
