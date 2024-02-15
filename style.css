@@ -109,6 +109,10 @@ p a:link, li a:link {
   animation: fade 1s ease-in .9s backwards;
 }
 
+.fade6 {
+  animation: fade 1s ease-in 1s backwards;
+}
+
 /*----------HEADER----------*/
 
 header {
@@ -190,6 +194,7 @@ main p {
                        'pic inf'
                        'pic inf'
                        'skl skl'
+                       'edu edu'
                        'ach ach'
 }
 
@@ -212,6 +217,13 @@ main p {
   margin-left: 1rem;
 }
 
+.informaton {
+  background-color: var(--bg-color);
+  border: 5px solid var(--border-color);
+  margin: 0.5rem 1rem;
+  padding: 0.3rem;
+}
+
 #info {
   grid-area: inf;
 }
@@ -220,15 +232,12 @@ main p {
   grid-area: ttl;
 }
 
-.informaton {
-  background-color: var(--bg-color);
-  border: 5px solid var(--border-color);
-  margin: 0.5rem 1rem;
-  padding: 0.3rem;
-}
-
 #skills {
   grid-area: skl;
+}
+
+#education {
+  grid-area: edu;
 }
 
 #achievements {
@@ -260,6 +269,7 @@ footer h1 {
         grid-template-areas: 'pic ttl'
                              'inf inf'
                              'skl skl'
+                             'edu edu'
                              'ach ach'
   }
 
