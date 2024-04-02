@@ -52,6 +52,7 @@ ul {
 li {
   list-style-type: none;
   padding: 0.1rem 0;
+  margin-bottom: 1%;
 }
 
 /*----------BODY----------*/
@@ -242,6 +243,16 @@ main p {
 
 #achievements {
   grid-area: ach;
+}
+
+.skill-li {
+  line-height: 2.5;
+}
+
+.skill {
+  background-color: var(--bg-color2a);
+  padding: 5px;
+  border-radius: 3px;
 }
 
 
