@@ -6,6 +6,7 @@
   --default-font: 'Merriweather', serif;
   --extra-font: "Iceland", cursive;
   --bg-color: #c486a7;
+  --bg-color-grad:  #dcabc5;
   --bg-color2: #9c5b9d;
   --bg-color2a: #9c5b9dcc;
   --border-color: #fff1;
@@ -61,10 +62,13 @@ body {
   font-family: var(--default-font);
   font-weight: 400;
   color: var(--text-color);
-  background-color: var(--bg-color);
+  background: linear-gradient(to bottom right, var(--bg-color), var(--bg-color-grad));
+  background-attachment: fixed; /*edit*/
+
   height: 100vh;
   margin: 0;
 }
+
 
 .header_footer_width {
   width: min(max(50vw, 800px), 100% - 4rem);
